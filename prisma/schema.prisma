@@ -22,7 +22,8 @@ model Employee{
   id              String    @id @default(uuid())
   firstName       String
   lastName        String
-  adress          String
+  address          String
+  age             String
   user            User      @relation(fields: [userId], references: [id])
   userId          String
 }
