@@ -5,8 +5,6 @@ const logger = require('morgan');
 
 require('dotenv').config();
 
-
-
 const app = express();
 
 app.use(logger('dev'));
@@ -17,4 +15,4 @@ app.use(cookieParser());
 app.use('/api/user', require('./routes/users'));
 app.use('/api/employees', require('./routes/employees'));
 
-module.exports = app; 
+module.exports = app;
