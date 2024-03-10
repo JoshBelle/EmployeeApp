@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import Login from './pages/login';
 import Register from './pages/register';
 import './index.css';
+import Auth from './features/auth/auth';
 
 const router = createBrowserRouter([
     {
@@ -30,15 +31,17 @@ const root = createRoot(container);
 
 root.render(
     <React.StrictMode>
-        <ConfigProvider
-            theme={{
-                algorithm: theme.darkAlgorithm,
-            }}
-        >
-            <Provider store={store}>
-                <RouterProvider router={router} />
-            </Provider>
-        </ConfigProvider>
+        <Provider store={store}>
+            <ConfigProvider
+                theme={{
+                    algorithm: theme.darkAlgorithm,
+                }}
+            >
+                <Auth>
+                    <RouterProvider router={router} />
+                </Auth>
+            </ConfigProvider>
+        </Provider>
     </React.StrictMode>
 );
 
